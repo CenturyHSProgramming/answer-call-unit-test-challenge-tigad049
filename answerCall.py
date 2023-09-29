@@ -16,11 +16,11 @@ def answerCall(caller_code: str, sameAreaCode: bool, cur_time: str):
         shouldAnswerCall = False
 
     if sameAreaCode == False:
-        if caller_code == "T" or caller_code == "U":
+        if caller_code == "U":
             shouldAnswerCall = False
-    elif sameAreaCode == True:
-        if caller_code == "T":
-            shouldAnswerCall = False
+    
+    if caller_code == "T":
+        shouldAnswerCall = False
     
     return shouldAnswerCall
 
