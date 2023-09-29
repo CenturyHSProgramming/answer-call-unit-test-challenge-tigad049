@@ -12,6 +12,10 @@ def answerCall(caller_code: str, sameAreaCode: bool, cur_time: str):
     shouldAnswerCall = True
 
     while shouldAnswerCall == True:
+        cur_time_int = int(cur_time.replace(':', ''))
+        if cur_time_int < 700 or cur_time_int > 2200:
+            shouldAnswerCall = False
+
         if sameAreaCode == False:
             if caller_code == "T" or caller_code == "U":
                 shouldAnswerCall = False
